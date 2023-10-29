@@ -1,5 +1,6 @@
 import nwbuild from "nw-builder";
-import { version, name } from "./package.json";
+import fs from "fs";
+const { version, name } = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 
 if (process.argv.length < 3) {
   console.log("Usage: npm run build -- <platform>-<arch>");

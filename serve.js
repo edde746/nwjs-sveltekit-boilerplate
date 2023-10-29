@@ -3,9 +3,9 @@ const { Server } = require("node-static");
 const http = require("http");
 
 const main = async () => {
-  const port = await portfinder.getPortPromise();
+  const port = await portfinder.getPortPromise({ port: 9000 });
 
-  var file = new Server("./app");
+  var file = new Server("./app", { cache: 0 });
 
   http
     .createServer((req, res) => {
