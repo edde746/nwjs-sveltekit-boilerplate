@@ -11,28 +11,66 @@
       click: function () {
         alert('You have clicked at "Item A"');
       },
-    })
+    }),
   );
   menu.append(new nw.MenuItem({ label: "Item B" }));
   menu.append(new nw.MenuItem({ type: "separator" }));
   menu.append(new nw.MenuItem({ label: "Item C" }));
 </script>
 
-<svelte:document
-  on:contextmenu|preventDefault|stopPropagation={({ x, y }) => menu.popup(x, y)}
-/>
+<svelte:document on:contextmenu|preventDefault|stopPropagation={({ x, y }) => menu.popup(x, y)} />
 
-<h1>Welcome to SvelteKit</h1>
-<p>
-  You are on {os.platform()} and you are using {os.arch()} architecture.
-</p>
+<div class="main">
+  <div class="icons">
+    <img src="/svelte.svg" alt="SvelteKit" />
+    <span>+</span>
+    <img src="/nwjs.png" alt="NW.js" />
+  </div>
 
-<a href="/test">Go to a second page</a>
+  <h1>SvelteKit + NW.js Boilerplate</h1>
+  <p>
+    You are on {os.platform()} and you are using {os.arch()} architecture.<br /> You are using NW.js
+    {process.versions.nw} and Node.js {process.versions.node}.
+  </p>
 
-<button
-  on:click={() => {
-    fs.writeFile("test.txt", "Hello world!");
-  }}
->
-  Create a file
-</button>
+  <a href="/browser/">File Browser Example</a>
+</div>
+
+<style>
+  .main {
+    height: 100vh;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 3rem;
+  }
+
+  .icons img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  a {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #fe3f00;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+  }
+</style>

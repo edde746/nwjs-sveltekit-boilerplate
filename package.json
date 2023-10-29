@@ -20,7 +20,7 @@
   "node-remote": "http://localhost:*",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"vite dev\" \"nw .\"",
+    "dev": "concurrently \"vite dev\" \"NODE_ENV=development nw .\"",
     "build": "node build.js",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
