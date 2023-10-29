@@ -21,10 +21,10 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"vite dev\" \"nw .\"",
-    "build": "vite build",
-    "preview": "vite preview",
+    "build": "node build.js",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "icons": "cd resources && npx png2icons ../static/favicon.png icon -allwe -bc"
   },
   "type": "module",
   "dependencies": {
