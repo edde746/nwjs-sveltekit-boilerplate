@@ -10,7 +10,7 @@ Simple boilerplate for building cross-platform apps with NW.js and SvelteKit. Ge
 mkdir my-project && cd my-project
 npx degit github:edde746/nwjs-sveltekit-boilerplate
 npm install
-npm run dev
+npm start
 ```
 
 ## Building
