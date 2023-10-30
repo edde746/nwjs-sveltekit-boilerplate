@@ -29,8 +29,8 @@
 
   <h1>SvelteKit + NW.js Boilerplate</h1>
   <p>
-    You are on {os.platform()} and you are using {os.arch()} architecture.<br /> You are using NW.js
-    {process.versions.nw} and Node.js {process.versions.node}.
+    Your operating system is {os.platform()}, running on a {os.arch()} architecture.
+    <br />You are currently utilizing NW.js version {process.versions.nw} and Node.js version {process.versions.node}.
   </p>
 
   <a href="/browser/">File Browser Example</a>
