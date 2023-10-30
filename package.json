@@ -9,8 +9,8 @@
     "concurrently": "^8.2.2",
     "copy-production-deps": "^0.2.1",
     "cross-env": "^7.0.3",
-    "nw": "^0.79.0-sdk",
-    "nw-builder": "latest",
+    "nw": "0.79.0-sdk",
+    "nw-builder": "^4.4.2-beta.3",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
     "svelte": "^4.0.5",
@@ -22,8 +22,9 @@
   "node-remote": "http://localhost:*",
   "private": true,
   "scripts": {
+    "start": "npm run dev",
     "dev": "concurrently \"vite dev\" \"cross-env NODE_ENV=development nw .\"",
-    "build": "vite build && node build.js",
+    "build": "npm run build:web && node build.js",
     "build:web": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -33,5 +34,9 @@
   "dependencies": {
     "node-static": "^0.7.11",
     "portfinder": "^1.0.32"
+  },
+  "volta": {
+    "node": "20.5.0",
+    "npm": "9.8.0"
   }
 }

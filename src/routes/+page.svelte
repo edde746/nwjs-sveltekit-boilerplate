@@ -5,17 +5,30 @@
 
   var menu = new nw.Menu();
 
-  menu.append(
-    new nw.MenuItem({
+  const menuItems = [
+    {
       label: "Item A",
       click: function () {
         alert('You have clicked at "Item A"');
-      },
-    }),
-  );
-  menu.append(new nw.MenuItem({ label: "Item B" }));
-  menu.append(new nw.MenuItem({ type: "separator" }));
-  menu.append(new nw.MenuItem({ label: "Item C" }));
+      }
+    },
+    { label: "Item B" },
+    { type: "separator" },
+    { label: "Item C" }
+  ];
+
+  if (process.versions['nw-flavor'] === 'sdk') {
+    menuItems.push({
+      label: "Open Dev Tools",
+      click: function () {
+        nw.Window.get().showDevTools();
+      }
+    });
+  }
+
+  menuItems.forEach(function (item) {
+    menu.append(new nw.MenuItem(item));
+  });
 </script>
 
 <svelte:document on:contextmenu|preventDefault|stopPropagation={({ x, y }) => menu.popup(x, y)} />
