@@ -22,13 +22,13 @@
   "node-remote": "http://localhost:*",
   "private": true,
   "scripts": {
+    "start": "npm run dev",
     "dev": "concurrently \"vite dev\" \"cross-env NODE_ENV=development nw .\"",
     "build": "vite build && node build.js",
     "build:web": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "icons": "cd resources && npx png2icons ../static/favicon.png icon -allwe -bc",
-    "start": "npm run dev"
+    "icons": "cd resources && npx png2icons ../static/favicon.png icon -allwe -bc"
   },
   "type": "module",
   "dependencies": {
