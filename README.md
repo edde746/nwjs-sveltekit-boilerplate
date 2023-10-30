@@ -2,7 +2,8 @@
 
 Simple boilerplate for building cross-platform apps with NW.js and SvelteKit. Get started by [running locally](#running-locally), then [build your app for production](#building).
 
-<img width="912" alt="Example Application" src="https://github.com/edde746/nwjs-sveltekit-boilerplate/assets/86283021/33d4fc59-cf57-4d23-9840-162160a357d9">
+<img width="912" alt="Example Application" src="https://github.com/edde746/nwjs-sveltekit-boilerplate/assets/86283021/8a3f4d7c-8fb8-443a-9c6a-8051820d8ac5">
+
 
 ## Running Locally
 
