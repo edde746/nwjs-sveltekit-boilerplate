@@ -18,11 +18,13 @@ jobs:
         run: bun i
       - name: Build
         run: bun run build -- linux-x64
+      - name: Archive
+        run: tar -czf linux-x64.tar.gz build
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: linux-x64
-          path: build
+          path: linux-x64.tar.gz
   build-win:
     runs-on: windows-latest
     steps:

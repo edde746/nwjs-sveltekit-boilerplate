@@ -1,5 +1,6 @@
 import nwbuild from "nw-builder";
 import fs from "fs";
+import { processPackage } from 'copy-production-deps/lib/copy-production-deps.js';
 const { version, name } = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 
 if (process.argv.length < 3) {
@@ -9,8 +10,18 @@ if (process.argv.length < 3) {
 
 const [platform, arch] = process.argv.at(-1).split("-");
 
+console.log("🔍 Finding dependencies...");
+
+const context = [];
+processPackage({
+  sourceDir: './',
+  deps: [],
+}, context);
+
+console.log("🚀 Building...");
+
 await nwbuild({
-  srcDir: "./app/**/* ./package.json ./serve.js",
+  srcDir: `./app/**/* ./package.json ./serve.js ${context.map((m) => m.sourceDir).join(" ")}}`,
   mode: "build",
   version: "latest",
   flavor: "normal",
@@ -42,3 +53,5 @@ await nwbuild({
     },
   }[platform],
 });
+
+console.log("🎉 Done!");
