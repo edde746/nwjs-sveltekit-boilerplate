@@ -9,7 +9,7 @@
     "concurrently": "^8.2.2",
     "copy-production-deps": "^0.2.1",
     "cross-env": "^7.0.3",
-    "nw": "^0.79.0-sdk",
+    "nw": "0.79.0-sdk",
     "nw-builder": "latest",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
@@ -27,11 +27,16 @@
     "build:web": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "icons": "cd resources && npx png2icons ../static/favicon.png icon -allwe -bc"
+    "icons": "cd resources && npx png2icons ../static/favicon.png icon -allwe -bc",
+    "start": "npm run dev"
   },
   "type": "module",
   "dependencies": {
     "node-static": "^0.7.11",
     "portfinder": "^1.0.32"
+  },
+  "volta": {
+    "node": "20.5.0",
+    "npm": "9.8.0"
   }
 }
