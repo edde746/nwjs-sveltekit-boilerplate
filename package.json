@@ -22,6 +22,7 @@
   "scripts": {
     "dev": "concurrently \"vite dev\" \"NODE_ENV=development nw .\"",
     "build": "vite build && node build.js",
+    "build:web": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "icons": "cd resources && npx png2icons ../static/favicon.png icon -allwe -bc"
