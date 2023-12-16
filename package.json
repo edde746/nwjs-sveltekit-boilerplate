@@ -28,7 +28,8 @@
     "build:web": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "icons": "cd resources && npx png2icons ../static/favicon.png icon -allwe -bc"
+    "icons": "cd resources && npx png2icons ../static/favicon.png icon -allwe -bc",
+    "postinstall": "npx base-volta-off-of-nwjs@latest"
   },
   "type": "module",
   "dependencies": {
@@ -36,7 +37,6 @@
     "portfinder": "^1.0.32"
   },
   "volta": {
-    "node": "20.5.0",
-    "npm": "9.8.0"
+    "node": "20.5.0"
   }
 }
