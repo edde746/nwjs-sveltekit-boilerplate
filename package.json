@@ -5,11 +5,11 @@
   "devDependencies": {
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.20.4",
-    "@types/nw.js": "^0.13.19",
+    "@types/nw.js": "^0.13.20",
     "concurrently": "^8.2.2",
     "copy-production-deps": "^0.2.1",
     "cross-env": "^7.0.3",
-    "nw": "0.79.0-sdk",
+    "nw": "^0.82.0",
     "nw-builder": "^4.4.2-beta.3",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
@@ -37,6 +37,6 @@
     "portfinder": "^1.0.32"
   },
   "volta": {
-    "node": "20.5.0"
+    "node": "20.7.0"
   }
 }
