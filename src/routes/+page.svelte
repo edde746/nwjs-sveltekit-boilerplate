@@ -3,18 +3,17 @@
   const fs = require("fs/promises");
   const os = require("os");
 
-  var menu = new nw.Menu();
+  const menu = new nw.Menu();
+
+  function click () {
+    alert('You have clicked ' + this.label);
+  }
 
   const menuItems = [
-    {
-      label: "Item A",
-      click: function () {
-        alert('You have clicked at "Item A"');
-      }
-    },
-    { label: "Item B" },
+    { label: "Item A", click },
+    { label: "Item B", click },
     { type: "separator" },
-    { label: "Item C" }
+    { label: "Item C", click }
   ];
 
   if (process.versions['nw-flavor'] === 'sdk') {
