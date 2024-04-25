@@ -17,7 +17,7 @@ npm start
 
 First, make sure that the `app` options are set to your liking in `build.js`.
 
-To build, simply run `npm run build -- platform-arch` (example: `npm run build -- win-x64`). A list of all available platforms and architechtures can be found in the [nw-builder documentation](https://nwutils.io/nw-builder/#options-object).
+To build, simply run `npm run build -- platform-arch` (example: `npm run build -- win-x64`). A list of all available platforms and architechtures can be found in the [nw-builder documentation](https://github.com/nwutils/nw-builder?tab=readme-ov-file#api-reference).
 
 ### Web Only
 
