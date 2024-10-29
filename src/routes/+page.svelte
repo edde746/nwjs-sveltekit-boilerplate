@@ -30,7 +30,7 @@
   });
 </script>
 
-<svelte:document on:contextmenu|preventDefault|stopPropagation={({ x, y }) => menu.popup(x, y)} />
+<svelte:document oncontextmenu={(e)=>{e.preventDefault();menu.popup(e.x, e.y);}} />
 
 <div class="main">
   <div class="icons">

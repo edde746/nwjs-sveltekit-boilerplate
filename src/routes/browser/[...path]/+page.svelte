@@ -3,16 +3,18 @@
   const fs = require("fs/promises");
   const path = require("path");
 
-  $: basePath = `/${$page.params.path || ""}`;
-  $: files = fs.readdir(basePath).then((files) =>
-    Promise.all(
-      files.map(async (file) => ({
-        file,
-        isDirectory: await fs
-          .stat(`${basePath}/${file}`)
-          .then((stat) => stat.isDirectory())
-          .catch(() => false),
-      })),
+  let basePath = $derived(`/${$page.params.path || ""}`);
+  let files = $derived(
+    fs.readdir(basePath).then((files) =>
+      Promise.all(
+        files.map(async (file) => ({
+          file,
+          isDirectory: await fs
+            .stat(`${basePath}/${file}`)
+            .then((stat) => stat.isDirectory())
+            .catch(() => false),
+        })),
+      ),
     ),
   );
 </script>
